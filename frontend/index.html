@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Todo App</title>
+</head>
+<body>
+<div id="app">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Todo List</h1>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Add Task Form -->
+            <div class="add-task-section">
+                <div class="input-group">
+                    <input
+                            type="text"
+                            id="task-input"
+                            placeholder="Add a new task..."
+                            maxlength="255"
+                    />
+                    <button id="add-task-btn" class="btn btn-primary">Add Task</button>
+                </div>
+                <div id="input-error" class="error-message"></div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="active">Active</button>
+                <button class="tab-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <!-- Tasks Container -->
+            <div class="tasks-container">
+                <!-- Active Tasks Section -->
+                <div id="active-tasks-section" class="task-section">
+                    <h2 class="section-title">Active Tasks</h2>
+                    <div id="active-tasks" class="task-list"></div>
+                </div>
+
+                <!-- Completed Tasks Section -->
+                <div id="completed-tasks-section" class="task-section">
+                    <h2 class="section-title">Completed Tasks</h2>
+                    <div id="completed-tasks" class="task-list"></div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-state">
+                    <p>No tasks yet. Add one above! 📝</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="delete-modal" class="modal">
+    <div class="modal-content">
+        <h3>Confirm Delete</h3>
+        <p>Are you sure you want to delete this task?</p>
+        <div class="modal-actions">
+            <button id="cancel-delete" class="btn btn-secondary">Cancel</button>
+            <button id="confirm-delete" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
